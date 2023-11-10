@@ -121,6 +121,11 @@ class App extends Component {
     this.setState({ searchTerm, moviesBySearch });
   };
 
+  handleClearSearch = () => {
+    // Clear the search term
+    this.setState({ searchTerm: '' });
+  };
+
 
   handleAddToFavorite = (movie) => {
     if (!this.state.favorites.find((favMovie) => favMovie.id === movie.id)) {
@@ -188,6 +193,9 @@ class App extends Component {
             value={searchTerm}
             onChange={this.handleInputChange}
           />
+          <button className="clear-button" onClick={this.handleClearSearch}>
+              Clear
+            </button>
         </div>
 
         <select
