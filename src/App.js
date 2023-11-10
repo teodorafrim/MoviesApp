@@ -81,7 +81,6 @@ class App extends Component {
         const newMovies = data.results.map((movie) => ({
           ...movie,
         }));
-        console.log("fetch");
         this.setState((prevState) => ({
           movies: [...prevState.movies, ...newMovies],
           page: prevState.page + 1,
